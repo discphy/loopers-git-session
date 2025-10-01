@@ -33,4 +33,17 @@ public class PlayerService {
         Player player = new Player(user, team);
         return playerRepository.save(player);
     }
+
+    /**
+     * 플레이어가 과제 패스 시 마다 패스 횟수를 1 증가시킵니다.
+     *  - 플레이어가 존재하지 않을 경우 예외를 발생시킵니다.
+     *
+     * @param playerId 패스를 시도하는 플레이어의 ID
+     */
+    public void pass(Long playerId) {
+        Player player = playerRepository.findById(playerId);
+
+        player.setPassCount(player.getPassCount() + 1);
+        playerRepository.save(player);
+    }
 }
