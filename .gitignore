@@ -38,3 +38,6 @@ out/
 
 ### Kotlin ###
 .kotlin
+
+### Querydsl ###
+**/modules/jpa/src/main/generated/
