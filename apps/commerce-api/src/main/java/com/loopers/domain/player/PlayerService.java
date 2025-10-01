@@ -12,6 +12,15 @@ public class PlayerService {
 
     private final PlayerRepository playerRepository;
 
+    /**
+     * 플레이어 권한을 가지고 있는 회원에 한해 팀을 배정합니다.
+     * - 팀이 배정되지 않은 플레이어 권한을 가진 회원만 팀 배정이 가능합니다.
+     * - 팀 배정을 완료한 플레이어를 생성 및 저장 후 반환합니다.
+     *
+     * @param user 팀이 배정되지 않은 플레이어 권한을 가진 회원
+     * @param team 배정될 팀
+     * @return 팀이 배정된 플레이어
+     */
     public Player selectTeam(User user, Team team) {
         playerRepository.findByUserId(user.getId()).ifPresent(p -> {
             throw new IllegalStateException("이미 팀이 배정된 플레이어입니다.");
