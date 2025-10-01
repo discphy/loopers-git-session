@@ -13,5 +13,9 @@ public class Player {
     private Team team;
 
 
+    public Player(User user, Team team) {
+        this.user = user;
+        this.team = team;
+    }
 
 }
