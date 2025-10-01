@@ -12,6 +12,8 @@ public class Player {
 
     private Team team;
 
+    @Setter
+    private int passCount;
 
     public Player(User user, Team team) {
         this.user = user;
