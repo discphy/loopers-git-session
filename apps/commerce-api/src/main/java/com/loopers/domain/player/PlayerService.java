@@ -41,7 +41,8 @@ public class PlayerService {
      * @param playerId 패스를 시도하는 플레이어의 ID
      */
     public void pass(Long playerId) {
-        Player player = playerRepository.findById(playerId);
+        Player player = playerRepository.findById(playerId)
+            .orElseThrow(() -> new RuntimeException("존재하지 않는 플레이어입니다."));
 
         player.setPassCount(player.getPassCount() + 1);
         playerRepository.save(player);
