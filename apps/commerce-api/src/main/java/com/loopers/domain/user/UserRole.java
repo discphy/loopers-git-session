@@ -9,6 +9,7 @@ public enum UserRole {
     MANAGER("매니저"),
     ANGEL("엔젤"),
     PLAYER("플레이어"),
+    UNKNOWN("알수없음")
     ;
 
     private final String description;

@@ -9,5 +9,13 @@ public class User {
 
     private String username;
 
+    private String password;
+
     private UserRole role;
+
+    public User(String name, String password) {
+        this.username = name;
+        this.password = password;
+        this.role = UserRole.UNKNOWN;
+    }
 }
